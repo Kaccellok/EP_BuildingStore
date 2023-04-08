@@ -1,0 +1,27 @@
+﻿<Window x:Class="HardwareStore.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HardwareStore.View" 
+        xmlns:viewmodel="clr-namespace:HardwareStore.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ClientVM}"
+        mc:Ignorable="d"
+        Title="Products" Height="500" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="500"
+        MinWidth="1000"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding ProductName}" >
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="ID товара" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Наименование товара" Binding="{Binding ProductName1}"/>
+                <DataGridTextColumn Header="Описание товара" Binding="{Binding ProductDescription}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+       
+    </Grid>
+</Window>
